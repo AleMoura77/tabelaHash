@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-#define M 151
+#define M 31
 #define MAX_tam 10
 #define MIN_tam 5
 
@@ -208,23 +208,24 @@ int main() {
         inserirTabelaHash(&tabelaHash, palavra);
     }
     
-    //double tempo = 0.0;
-    //clock_t begin = clock();
-    //buscarTabelaHash(&tabelaHash, vetorPalavras[9]);
-    //clock_t end = clock();
-    //tempo += (double) (end-begin);
-    //printf("%f\n", tempo);
+    // double tempo = 0.0;
+    // clock_t begin = clock();
+    // for(int i=0; i<quantidadeDePalavras; i++){
+    //     buscarTabelaHash(&tabelaHash, vetorPalavras[i]);
+    // }
+    // clock_t end = clock();
+    // tempo += (double) (end-begin);
+    // printf("%lf\n", tempo);
         
-    for (int i = 0; i < quantidadeDePalavras; i++) {
-        free(vetorPalavras[i]);
-    }
+    // for (int i = 0; i < quantidadeDePalavras; i++) {
+    //     free(vetorPalavras[i]);
+    // }
     free(vetorPalavras);
 
     //Verificar e imprimir a quantidade de valores em cada lista de cada vetor da tabela hash
     for (int j = 0; j < M; j++) {
         printf("Vetor %d: ", j);
         Lista* lista = &tabelaHash.vetores[j];
-        NoLista* aux = lista->primeiro;
         printf("\n");
         printf("Quantidade de valores: %d\n", lista->quantidade);
         //printf("%d\n", lista->quantidade);
